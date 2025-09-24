@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <ctype.h>  // for isdigit() and isalpha() functions
+
+int main() {
+    char ch;
+
+    printf("Enter a character: ");
+    scanf("%c", &ch);
+
+    // First check using switch statement for vowels
+    switch (ch) {
+        case 'a':
+        case 'e':
+        case 'i':
+        case 'o':
+        case 'u':
+        case 'A':
+        case 'E':
+        case 'I':
+        case 'O':
+        case 'U':
+            printf("'%c' is a vowel.\n", ch);
+            return 0;
+    }
+
+    // If not a vowel, use if-else for digit or consonant
+    if (isdigit(ch)) {
+        printf("'%c' is a digit.\n", ch);
+    } else if (isalpha(ch)) {
+        printf("'%c' is a consonant.\n", ch);
+    } else {
+        printf("'%c' is neither a vowel, consonant, nor digit.\n", ch);
+    }
+
+    return 0;
+}
